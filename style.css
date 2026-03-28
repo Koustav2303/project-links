@@ -1,0 +1,176 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0f0c29; 
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Canvas Background */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; 
+}
+
+/* Main Layout */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Glassmorphism Panel - UPDATED FOR SCROLLING */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 420px; 
+    height: 85vh; /* Fixed height relative to viewport */
+    max-height: 650px; /* Caps the maximum height */
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex; /* Flexbox used to manage internal space */
+    flex-direction: column;
+}
+
+/* Profile Section */
+.profile-section {
+    margin-bottom: 25px;
+    flex-shrink: 0; /* Prevents the profile from shrinking when links get crowded */
+}
+
+.profile-image-wrapper {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 15px auto;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), linear-gradient(135deg, #00c6ff, #0072ff);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 0 0 20px rgba(0, 198, 255, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.profile-bio {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+}
+
+/* Links Section - UPDATED FOR SCROLLING */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding-right: 10px; /* Gives room for the custom scrollbar */
+    padding-bottom: 10px; /* Extra space at the bottom */
+    flex-grow: 1; /* Tells the link box to take up the remaining space inside the card */
+}
+
+/* --- CUSTOM SCROLLBAR FOR THE LINKS --- */
+.links::-webkit-scrollbar {
+    width: 6px;
+}
+.links::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02); 
+    border-radius: 10px;
+}
+.links::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15); 
+    border-radius: 10px;
+}
+.links::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3); 
+}
+
+/* Link Buttons */
+.link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    flex-shrink: 0; /* Prevents buttons from squishing */
+}
+
+.link-btn i {
+    position: absolute;
+    left: 20px;
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.link-btn span {
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.link-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.link-btn:hover i {
+    transform: scale(1.2);
+}
+
+/* Brand Specific Hover Colors */
+.link-btn.first:hover { background: #1877F2; }
+.link-btn.second:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.link-btn.third:hover { background: #1da1f2; }
+.link-btn.fifth:hover { background: #0A66C2; }
+.link-btn.fourth:hover { background: #333333; }
+.link-btn.sixth:hover { background: #00c6ff; }
+.link-btn.seventh:hover { background: #FF0000; }
+.link-btn.eighth:hover { background: #13219d; }
+.link-btn.ninth:hover { background: #c71264; }
+.link-btn.tenth:hover { background: #3ac1e3; }
+.link-btn.eleventh:hover { background: #aa5d0b; }
+.link-btn.twelveth:hover { background: #020f38; }
